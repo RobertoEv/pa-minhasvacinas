@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -5,10 +6,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { FullLayoutComponent } from './layouts/full-layout.component';
 
 export const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: '',
     pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    redirectTo: 'login',
   },
   {
     path: '',
@@ -30,3 +37,15 @@ export const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
+
+// import { DashboardComponent } from './dashboard/dashboard.component';
+// import { RouterModule, Routes } from '@angular/router';
+
+
+// const appRoutes: Routes = [
+
+//     { path: '', component: DashboardComponent }
+      
+// ];
+
+// export const routing = RouterModule.forRoot(appRoutes);
